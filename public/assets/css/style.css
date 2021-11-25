@@ -1,0 +1,13 @@
+body {
+    background: url("../images/fondgalaxy.jpg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    font-family: 'MinecraftiaRegular'
+}
+.title {
+    color: deeppink;
+}
+
+.btn {
+    background-color: deeppink;
+}
