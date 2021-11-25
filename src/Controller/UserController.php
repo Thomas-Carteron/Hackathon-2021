@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\UserManager;
+
 class UserController extends AbstractController
 {
     public function register(): string
@@ -9,7 +11,7 @@ class UserController extends AbstractController
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = array_map('trim', $_POST);
-            if (empty($user['username'])) {
+            if (empty($user['name'])) {
                 $errors['usernameError'] = 'Le champs pseudo doit être remplie';
             }
             if (empty($user['email'])) {
@@ -46,12 +48,26 @@ class UserController extends AbstractController
             }
             header('Location:/');
         }
-        return $this->twig->render('User/formConnect.html.twig',);
+        return $this->twig->render('User/formConnect.html.twig');
     }
 
     public function logout()
     {
         session_destroy();
         header('location: /');
+    }
+
+    public function profil(int $id): string
+    {
+        $userManager = new UserManager();
+        $userData = $userManager->selectOneById($id);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $tagId = $_POST;
+            $tagManager = new TagManager();
+            $tagManager->insert($tagId);
+        }
+        return $this->twig->render('User/user.html.twig', [
+            'profile' => $userData,
+        ]);
     }
 }
