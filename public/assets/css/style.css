@@ -10,7 +10,10 @@
 .title {
     color: deeppink;
 }
+table {
+    background-color: deeppink !important;
 
+}
 .btn {
     background-color: deeppink !important;
 }
