@@ -7,7 +7,6 @@
         <th scope="col">Top</th>
         <th scope="col">Pseudo</th>
         <th scope="col">Score</th>
-
     </tr>
     </thead>
     {% for user in users  %}
@@ -16,12 +15,9 @@
         <th scope="row">1</th>
         <td>{{ user.name }}</td>
         <td>{{ user.high_score }}</td>
-
     </tr>
     {% endfor %}
     </tbody>
 </table>
-
     </div>
-
 {% endblock %}
