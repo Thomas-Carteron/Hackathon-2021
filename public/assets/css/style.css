@@ -12,7 +12,11 @@
 }
 
 .btn {
+
     background-color: deeppink !important;
+
+    background-color: deeppink;
+
 }
 
 footer {
