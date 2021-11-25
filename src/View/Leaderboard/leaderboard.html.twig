@@ -10,31 +10,15 @@
 
     </tr>
     </thead>
+    {% for user in users  %}
     <tbody>
     <tr>
         <th scope="row">1</th>
-        <td>ElTitix</td>
-        <td>2550</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.high_score }}</td>
 
     </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Enzo</td>
-        <td>2000</td>
-
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>Mathis</td>
-        <td>1486</td>
-
-    </tr>
-    <tr>
-        <th scope="row">4</th>
-        <td>Charles</td>
-        <td>nul/20</td>
-
-    </tr>
+    {% endfor %}
     </tbody>
 </table>
 
