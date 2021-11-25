@@ -56,4 +56,18 @@ class UserController extends AbstractController
         session_destroy();
         header('location: /');
     }
+
+    public function profil(int $id): string
+    {
+        $userManager = new UserManager();
+        $userData = $userManager->selectOneById($id);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $tagId = $_POST;
+            $tagManager = new TagManager();
+            $tagManager->insert($tagId);
+        }
+        return $this->twig->render('User/user.html.twig', [
+            'profile' => $userData,
+        ]);
+    }
 }
