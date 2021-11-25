@@ -48,7 +48,7 @@ class UserController extends AbstractController
             }
             header('Location:/');
         }
-        return $this->twig->render('User/formConnect.html.twig', ['session' => $_SESSION,]);
+        return $this->twig->render('User/formConnect.html.twig');
     }
 
     public function logout()
