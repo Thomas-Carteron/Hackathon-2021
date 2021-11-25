@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\UserManager;
+
 class UserController extends AbstractController
 {
     public function register(): string
@@ -9,7 +11,7 @@ class UserController extends AbstractController
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = array_map('trim', $_POST);
-            if (empty($user['username'])) {
+            if (empty($user['name'])) {
                 $errors['usernameError'] = 'Le champs pseudo doit être remplie';
             }
             if (empty($user['email'])) {
@@ -46,7 +48,7 @@ class UserController extends AbstractController
             }
             header('Location:/');
         }
-        return $this->twig->render('User/formConnect.html.twig',);
+        return $this->twig->render('User/formConnect.html.twig', ['session' => $_SESSION,]);
     }
 
     public function logout()
