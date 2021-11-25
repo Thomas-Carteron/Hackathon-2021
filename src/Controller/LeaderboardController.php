@@ -2,10 +2,16 @@
 
 namespace App\Controller;
 
+use App\Model\LeaderboardManager;
+
 class LeaderboardController extends AbstractController
 {
     public function index()
     {
-        return $this->twig->render('Leaderboard/leaderboard.html.twig');
+        $leaderboardManager = new LeaderboardManager();
+        $userScore = $leaderboardManager->selectUserByScore();
+        return $this->twig->render('Leaderboard/leaderboard.html.twig', [
+            'users' => $userScore,
+        ]);
     }
 }
