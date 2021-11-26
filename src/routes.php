@@ -11,5 +11,6 @@ return [
     'gameOver'     => ['GameoverController', 'gameOver',],
     'ngrok'        => ['ApiController', 'index'],
     'game'         => ['GameController','showGame'],
+    'logout'       => ['UserController', 'logout'],
 
 ];
