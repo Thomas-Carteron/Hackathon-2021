@@ -10,5 +10,6 @@ return [
     'easterEgg'    => ['EastereggController', 'message',],
     'gameOver'     => ['GameoverController', 'gameOver',],
     'ngrok'        => ['ApiController', 'index'],
+    'game'         => ['GameController','showGame'],
 
 ];
