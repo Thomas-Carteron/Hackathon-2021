@@ -8,14 +8,16 @@
 }
 
 .title {
-    color: deeppink;
+    background: -webkit-linear-gradient(#fb0a66, #ad02fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 table {
     background-color: deeppink !important;
 
 }
 .btn {
-    background-color: deeppink !important;
+    background: linear-gradient(#fb0a66, #ad02fa) !important;
 }
 
 footer {
