@@ -6,17 +6,15 @@
     <tr>
         <th class="text-center" scope="col">Top</th>
         <th class="text-center"  scope="col">Pseudo</th>
-        <th class="text-center"  scope="col">Score</th>
         <th class="text-center"  scope="col">Meilleur temps</th>
     </tr>
     </thead>
     {% for user in users  %}
     <tbody>
     <tr>
-        <th scope="row">{{ loop.index  }}</th>
+        <th  class="text-center" scope="row">{{ loop.index  }}</th>
         <td class="text-center" >{{ user.name }}</td>
-        <td class="text-center" >{{ user.high_score }}</td>
-        <td class="text-center" >{{ user.best_time }}</td>
+        <td class="text-center" >{{ user.best_time }}s</td>
     </tr>
     {% endfor %}
     </tbody>
