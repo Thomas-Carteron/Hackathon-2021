@@ -8,8 +8,13 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <div class="navbar-nav">
+                {% if session.user %}
+                    <a class="nav-link m-3 text-white" href="/user?id={{ session.user.id }}">Mon profil</a>
+                    <a class="nav-link m-3 text-white" href="/logout">Déconnexion</a>
+                {% else %}
                 <a class="nav-link m-3 text-white" href="/user/create">Inscrivez-vous</a>
                 <a class="nav-link m-3 text-white" href="/user/connect">Connectez-vous</a>
+                {% endif %}
             </div>
         </div>
     </div>
