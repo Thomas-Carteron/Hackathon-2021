@@ -9,6 +9,6 @@ return [
     'history'      => ['HistoryController', 'history'],
     'easterEgg'    => ['EastereggController', 'message',],
     'gameOver'     => ['GameoverController', 'gameOver',],
-    'ngrok'        => ['AbstractAPIController', 'index'],
+    'ngrok'        => ['ApiController', 'index'],
 
 ];

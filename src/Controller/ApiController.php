@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\ApiManager;
 
-class AbstractAPIController
+class ApiController
 {
  //   public function __construct()
    // {
@@ -20,6 +20,6 @@ class AbstractAPIController
         $time = $_GET['time'];
         $apiManager = new ApiManager();
         $apiManager->insertNgrokInBdd($name, $time);
-        header('Location:/ngrok');
+        header('Location:/classement');
     }
 }
